@@ -101,14 +101,16 @@
     "nsvModel": {
       "type": "string",
       "allowedValues": [
-        "NSv 270",
-        "NSv 470",
-        "NSv 870"
+        "NSv 10 / NSv 25 / NSv 50 / NSv 100 (only for SKU snwl-nsv-byol-654)",
+        "NSv 270 / NSv 200",
+        "NSv 470 / NSv 400",
+        "NSv 870 / NSv 800",
+        "NSv 1600 (only for SKU snwl-nsv-byol-654)"
       ],
       "metadata": {
-        "description": "SonicWall-NSv model, NSv 270 VM size Standard_DS2_v2 or Standard_D2_v2, NSv 470 VM size Standard_DS3_v2 or Standard_D3_v2, NSv 870 VM size Standard_DS4_v2 or Standard_D4_v2, depending on the SKU selected"
+        "description": "SonicWall-NSv model. Choosing NSv 10, 25, 50, 100, 200, 400, 800 or 1600 with SKU \"snwl-nsv-byol-654\" will use Standard_D2_v2, Standard_D3_v2, Standard_D4_v2, Standard_D5_v2 respectively. Choosing NSv 270, 470 or 870 with SKU \"snwl-nsv-byol\" will use Standard_D2_v2, Standard_D3_v2, Standard_D4_v2 respectively. Choosing NSv 270, 470 or 870 with SKU \"snwl-nsv-scx\" will use Standard_DS2_v2, Standard_DS3_v2, Standard_DS4_v2 respectively."
       },
-      "defaultValue": "NSv 470"
+      "defaultValue": "NSv 470 / NSv 400"
     },
     "virtualNetworkNewOrExisting": {
       "type": "string",
@@ -248,9 +250,11 @@
       }
     },
     "vmSize": {
-      "NSv 270": "[if(sonicwall.isLegacySku(parameters('imageSku')), 'Standard_D2_v2', 'Standard_DS2_v2')]",
-      "NSv 470": "[if(sonicwall.isLegacySku(parameters('imageSku')), 'Standard_D3_v2', 'Standard_DS3_v2')]",
-      "NSv 870": "[if(sonicwall.isLegacySku(parameters('imageSku')), 'Standard_D4_v2', 'Standard_DS4_v2')]"
+      "NSv 10 / NSv 25 / NSv 50 / NSv 100 (only for SKU snwl-nsv-byol-654)": "[if(sonicwall.isLegacySku(parameters('imageSku')), 'Standard_D2_v2', 'Standard_DS2_v2')]",
+      "NSv 270 / NSv 200": "[if(sonicwall.isLegacySku(parameters('imageSku')), 'Standard_D2_v2', 'Standard_DS2_v2')]",
+      "NSv 470 / NSv 400": "[if(sonicwall.isLegacySku(parameters('imageSku')), 'Standard_D3_v2', 'Standard_DS3_v2')]",
+      "NSv 870 / NSv 800": "[if(sonicwall.isLegacySku(parameters('imageSku')), 'Standard_D4_v2', 'Standard_DS4_v2')]",
+      "NSv 1600 (only for SKU snwl-nsv-byol-654)": "[if(sonicwall.isLegacySku(parameters('imageSku')), 'Standard_D5_v2', 'Standard_DS5_v2')]"
     },
     "imagePublisher": "sonicwall-inc",
     "imageOffer" : "sonicwall-nsz-azure",
