@@ -89,7 +89,7 @@
       "type": "string",
       "defaultValue": "latest",
       "metadata": {
-        "description": "The version of loaded NSv image. Specifying \"latest\" will automatically select the latest version of the image in the corresponding \"Image Sku\". Or a specific version can be specified. For example \"7.0.2363\" for \"snwl-nsv-byol\" or \"6.5.1519\" for \"snwl-nsv-byol-654\". Versions available in the SKUs can be listed by running \"az vm image list --output table --all --publisher sonicwall-inc --offer sonicwall-nsz-azure\" in Azure Bash Cloud Shell."
+        "description": "The version of loaded NSv image. Specifying \"latest\" will automatically select the latest version of the image in the corresponding \"Image Sku\". Or a specific version can be specified. For example \"7.0.2363\" for \"snwl-nsv-byol\" or \"6.5.2340\" for \"snwl-nsv-byol-654\". Versions available in the SKUs can be listed by running \"az vm image list --output table --all --publisher sonicwall-inc --offer sonicwall-nsz-azure\" in Azure Bash Cloud Shell."
       }
     },
     "managementAccessIPSource": {
